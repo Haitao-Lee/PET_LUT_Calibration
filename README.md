@@ -5,6 +5,19 @@ Given a 256x256 LUT image, the application predicts the 256 crystal peak coordin
 deep regression network (GCDLNet by default), visualizes the LUT together with the predicted
 peaks and the segmented crystal regions, and lets the user correct individual peaks interactively.
 
+## Interface
+
+![Interface](docs/interface.png)
+
+The main window consists of four areas:
+
+- **Working Tree** - browse and open `.npy` LUT images (double-click a file to load it).
+- **Operation Area** - select the regression model, run `predict` / `visible` / `isolate`, and see
+  the number of found / lost peaks.
+- **Information** - log of the current file, executed actions and saved results.
+- **Visualization** - the LUT image with the predicted peaks, watershed region boundaries and the
+  cluster map (the screenshot shows the boundary view after `isolate`).
+
 ## Features
 
 - Load a single LUT image (`.npy`, 256x256) or browse a folder from the built-in file tree.
@@ -31,6 +44,8 @@ pet_lut_calibration/
 |-- visualization.py          # Matplotlib canvas embedded in the main window
 |-- config.py                 # paths of the trained model weights
 |-- meancordinate.npy         # mean peak coordinates used by the "mean" models
+|-- docs/                     # images used by this README
+|   `-- interface.png         # application screenshot
 |-- models/                   # network definitions
 |   |-- GCDLNet.py            # main model: LocalizationNetwork (default)
 |   |-- ...                   # ResNet / DenseNet / UNet / LadderNet / ConvNeXt variants
