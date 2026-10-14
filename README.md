@@ -65,8 +65,9 @@ pip install -r requirements.txt
 
 ## Model weights
 
-The trained weights (about 2 GB in total) are **not** part of this repository. Put them into
-`trained_model/` using the file names referenced in `config.py`:
+Download the trained weights (about 2 GB in total) from the
+[v1.0.0 release](https://github.com/Haitao-Lee/PET_LUT_Calibration/releases/tag/v1.0.0) and put them
+into `trained_model/` using the file names referenced in `config.py`:
 
 ```
 GCDLNet.pth            mean_model.pth
